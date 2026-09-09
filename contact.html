@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | The Plain Theory</title>
+    <title>Contact & Partnerships | The Plain Theory</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +19,7 @@
                             green: '#2d5a27',
                             light: '#f7f6f2',
                             beige: '#e8e5d9',
-                            gray: '#8a8a8a',
-                            accent1: '#8ba689', // Even
-                            accent2: '#6b8e84', // Clear
-                            accent3: '#9c7c5e'  // Ground
+                            gray: '#8a8a8a'
                         }
                     },
                     fontFamily: {
@@ -37,8 +34,6 @@
         body { background-color: #f7f6f2; color: #1c1c1c; -webkit-font-smoothing: antialiased; }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -52,7 +47,7 @@
                     <span>the plain theory</span>
                 </a>
                 <div class="hidden md:flex items-center gap-6 text-sm font-medium">
-                    <a href="shop.html" class="text-brand-green">Shop</a>
+                    <a href="shop.html" class="hover:text-brand-green transition-colors">Shop</a>
                     <a href="about.html" class="hover:text-brand-green transition-colors">Our Story</a>
                     <a href="ingredients.html" class="hover:text-brand-green transition-colors">Ingredients</a>
                 </div>
@@ -75,73 +70,94 @@
             <a href="shop.html" class="hover:text-brand-green border-b border-brand-beige pb-4">Shop</a>
             <a href="about.html" class="hover:text-brand-green border-b border-brand-beige pb-4">Our Story</a>
             <a href="ingredients.html" class="hover:text-brand-green border-b border-brand-beige pb-4">Ingredients</a>
+            <a href="faq.html" class="hover:text-brand-green border-b border-brand-beige pb-4">FAQ</a>
+            <a href="contact.html" class="hover:text-brand-green border-b border-brand-beige pb-4">Contact Us</a>
         </div>
     </div>
 
-
     <!-- Main Content -->
     <main class="flex-grow pt-32 pb-24 px-6">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             
-            <!-- Header -->
             <div class="text-center mb-16 reveal active">
-                <h1 class="text-4xl md:text-5xl font-serif mb-4">Shop the Theory</h1>
-                <p class="text-gray-500 max-w-xl mx-auto text-lg font-light">Natural, unisex deodorants that work with your body. Clinically vetted, beautifully simple.</p>
+                <h1 class="text-4xl md:text-5xl font-serif mb-4">Let's talk.</h1>
+                <p class="text-gray-500 text-lg font-light">Whether you're a customer with a question or a distributor looking to partner, we're here.</p>
             </div>
 
-            <!-- Product Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                 
-                <!-- Product 1 -->
-                <a href="product.html?variant=even" class="group block reveal">
-                    <div class="bg-white rounded-xl aspect-[3/4] mb-6 flex items-center justify-center p-8 overflow-hidden relative border border-brand-beige group-hover:border-brand-accent1 transition-colors">
-                        <img src="assets/even.png" alt="EVEN - Tea Tree + Lavender" class="object-contain h-full transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur rounded-full p-3 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                            <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-black"></i>
+                <!-- Contact Form -->
+                <div class="bg-white p-8 md:p-10 rounded-2xl border border-brand-beige shadow-sm reveal active">
+                    <h2 class="text-2xl font-serif mb-6">Send a Message</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-brand-green focus:border-brand-green bg-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-brand-green focus:border-brand-green bg-transparent">
+                            </div>
                         </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="inline-block px-3 py-1 bg-brand-accent1/20 text-brand-accent1 text-xs font-semibold tracking-wider rounded-full mb-3">EVEN</div>
-                        <h2 class="text-xl font-serif mb-1 group-hover:text-brand-accent1 transition-colors">Tea Tree + Lavender</h2>
-                        <p class="text-gray-500 text-sm font-light mb-3">Natural Unisex Deodorant • 50ml</p>
-                        <p class="text-lg font-medium">₹200</p>
-                    </div>
-                </a>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-brand-green focus:border-brand-green bg-transparent">
+                        </div>
 
-                <!-- Product 2 -->
-                <a href="product.html?variant=clear" class="group block reveal delay-1">
-                    <div class="bg-white rounded-xl aspect-[3/4] mb-6 flex items-center justify-center p-8 overflow-hidden relative border border-brand-beige group-hover:border-brand-accent2 transition-colors">
-                        <img src="assets/clear.png" alt="CLEAR - Eucalyptus + Rosemary" class="object-contain h-full transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur rounded-full p-3 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                            <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-black"></i>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Inquiry Type</label>
+                            <select class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-brand-green focus:border-brand-green bg-transparent text-gray-700">
+                                <option>General Question</option>
+                                <option>Order Support</option>
+                                <option>Wholesale & Distribution</option>
+                                <option>Press & Media</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="inline-block px-3 py-1 bg-brand-accent2/20 text-brand-accent2 text-xs font-semibold tracking-wider rounded-full mb-3">CLEAR</div>
-                        <h2 class="text-xl font-serif mb-1 group-hover:text-brand-accent2 transition-colors">Eucalyptus + Rosemary</h2>
-                        <p class="text-gray-500 text-sm font-light mb-3">Natural Unisex Deodorant • 50ml</p>
-                        <p class="text-lg font-medium">₹200</p>
-                    </div>
-                </a>
 
-                <!-- Product 3 -->
-                <a href="product.html?variant=ground" class="group block reveal delay-2">
-                    <div class="bg-white rounded-xl aspect-[3/4] mb-6 flex items-center justify-center p-8 overflow-hidden relative border border-brand-beige group-hover:border-[#8b6b4e] transition-colors">
-                        <img src="assets/ground.png" alt="GROUND - Sandalwood + Cedarwood" class="object-contain h-full transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur rounded-full p-3 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                            <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-black"></i>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-brand-green focus:border-brand-green bg-transparent"></textarea>
                         </div>
+
+                        <button type="button" class="w-full bg-brand-black text-white px-8 py-4 rounded-md font-medium hover:bg-brand-green transition-colors text-lg" onclick="alert('Message sent! We will get back to you shortly.')">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Wholesale -->
+                <div class="space-y-12 reveal delay-1">
+                    
+                    <div>
+                        <h3 class="text-xl font-serif mb-4 flex items-center gap-2"><i data-lucide="mail" class="w-5 h-5 text-brand-green"></i> General Inquiries</h3>
+                        <p class="text-gray-500 font-light leading-relaxed mb-2">For questions about your order, our formula, or general feedback.</p>
+                        <a href="mailto:hello@theplaintheory.com" class="text-brand-black font-medium hover:text-brand-green transition-colors border-b border-brand-black hover:border-brand-green pb-0.5">hello@theplaintheory.com</a>
                     </div>
-                    <div class="text-center">
-                        <div class="inline-block px-3 py-1 bg-[#8b6b4e]/20 text-[#8b6b4e] text-xs font-semibold tracking-wider rounded-full mb-3">GROUND</div>
-                        <h2 class="text-xl font-serif mb-1 group-hover:text-[#8b6b4e] transition-colors">Sandalwood + Cedarwood</h2>
-                        <p class="text-gray-500 text-sm font-light mb-3">Natural Unisex Deodorant • 50ml</p>
-                        <p class="text-lg font-medium">₹200</p>
+
+                    <div class="pt-8 border-t border-brand-beige">
+                        <h3 class="text-xl font-serif mb-4 flex items-center gap-2"><i data-lucide="handshake" class="w-5 h-5 text-brand-green"></i> Wholesale & Partnerships</h3>
+                        <p class="text-gray-500 font-light leading-relaxed mb-4">
+                            We are actively expanding. If you are a distributor, retailer, or co-investment partner looking to bring honest, science-backed personal care to your network, we want to hear from you. 
+                        </p>
+                        <p class="text-gray-500 font-light leading-relaxed mb-4">
+                            With our verified safety data, low MRP positioning (₹200), and premium un-gendered packaging, our pilot batches are ready to scale. Let's build together.
+                        </p>
+                        <a href="mailto:partnerships@theplaintheory.com" class="text-brand-black font-medium hover:text-brand-green transition-colors border-b border-brand-black hover:border-brand-green pb-0.5">partnerships@theplaintheory.com</a>
                     </div>
-                </a>
+
+                    <div class="pt-8 border-t border-brand-beige">
+                        <h3 class="text-xl font-serif mb-4 flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5 text-brand-green"></i> Headquarters</h3>
+                        <p class="text-gray-500 font-light leading-relaxed">
+                            Formulated & Manufactured in India.<br>
+                            CDSCO Cosmetic Manufacturing Licensed.
+                        </p>
+                    </div>
+
+                </div>
 
             </div>
-
         </div>
     </main>
 
@@ -194,7 +210,19 @@
 
     <script>
         lucide.createIcons();
-        
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal:not(.active)");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100);
+
         // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -213,18 +241,6 @@
                 lucide.createIcons();
             });
         }
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal:not(.active)");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 50) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        setTimeout(reveal, 100);
     </script>
 </body>
 </html>

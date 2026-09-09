@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | The Plain Theory</title>
+    <title>FAQ | The Plain Theory</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +19,7 @@
                             green: '#2d5a27',
                             light: '#f7f6f2',
                             beige: '#e8e5d9',
-                            gray: '#8a8a8a',
-                            accent1: '#8ba689', // Even
-                            accent2: '#6b8e84', // Clear
-                            accent3: '#9c7c5e'  // Ground
+                            gray: '#8a8a8a'
                         }
                     },
                     fontFamily: {
@@ -37,8 +34,6 @@
         body { background-color: #f7f6f2; color: #1c1c1c; -webkit-font-smoothing: antialiased; }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -52,7 +47,7 @@
                     <span>the plain theory</span>
                 </a>
                 <div class="hidden md:flex items-center gap-6 text-sm font-medium">
-                    <a href="shop.html" class="text-brand-green">Shop</a>
+                    <a href="shop.html" class="hover:text-brand-green transition-colors">Shop</a>
                     <a href="about.html" class="hover:text-brand-green transition-colors">Our Story</a>
                     <a href="ingredients.html" class="hover:text-brand-green transition-colors">Ingredients</a>
                 </div>
@@ -75,71 +70,103 @@
             <a href="shop.html" class="hover:text-brand-green border-b border-brand-beige pb-4">Shop</a>
             <a href="about.html" class="hover:text-brand-green border-b border-brand-beige pb-4">Our Story</a>
             <a href="ingredients.html" class="hover:text-brand-green border-b border-brand-beige pb-4">Ingredients</a>
+            <a href="faq.html" class="hover:text-brand-green border-b border-brand-beige pb-4">FAQ</a>
+            <a href="contact.html" class="hover:text-brand-green border-b border-brand-beige pb-4">Contact Us</a>
         </div>
     </div>
 
-
     <!-- Main Content -->
     <main class="flex-grow pt-32 pb-24 px-6">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-3xl mx-auto">
             
-            <!-- Header -->
             <div class="text-center mb-16 reveal active">
-                <h1 class="text-4xl md:text-5xl font-serif mb-4">Shop the Theory</h1>
-                <p class="text-gray-500 max-w-xl mx-auto text-lg font-light">Natural, unisex deodorants that work with your body. Clinically vetted, beautifully simple.</p>
+                <h1 class="text-4xl md:text-5xl font-serif mb-4">Frequently Asked Questions</h1>
+                <p class="text-gray-500 text-lg font-light">Everything you need to know about our science, our formulas, and your skin.</p>
             </div>
 
-            <!-- Product Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="space-y-6 reveal active">
                 
-                <!-- Product 1 -->
-                <a href="product.html?variant=even" class="group block reveal">
-                    <div class="bg-white rounded-xl aspect-[3/4] mb-6 flex items-center justify-center p-8 overflow-hidden relative border border-brand-beige group-hover:border-brand-accent1 transition-colors">
-                        <img src="assets/even.png" alt="EVEN - Tea Tree + Lavender" class="object-contain h-full transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur rounded-full p-3 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                            <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-black"></i>
-                        </div>
+                <h3 class="text-xl font-serif mt-12 mb-4 border-b border-brand-beige pb-2">How It Works</h3>
+                
+                <details class="group bg-white rounded-lg border border-brand-beige p-6" open>
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-lg">
+                        <span>Will I still sweat while using this?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 font-light mt-4 leading-relaxed">
+                        Yes! Sweating is a natural, healthy way for your body to cool down and release toxins. Our deodorant doesn't block your sweat glands with aluminum chlorohydrate. Instead, our active ingredient (Potassium Alum) creates an invisible shield that prevents odor-causing bacteria from surviving. <strong>You will sweat naturally, but you won't smell.</strong>
                     </div>
-                    <div class="text-center">
-                        <div class="inline-block px-3 py-1 bg-brand-accent1/20 text-brand-accent1 text-xs font-semibold tracking-wider rounded-full mb-3">EVEN</div>
-                        <h2 class="text-xl font-serif mb-1 group-hover:text-brand-accent1 transition-colors">Tea Tree + Lavender</h2>
-                        <p class="text-gray-500 text-sm font-light mb-3">Natural Unisex Deodorant • 50ml</p>
-                        <p class="text-lg font-medium">₹200</p>
-                    </div>
-                </a>
+                </details>
 
-                <!-- Product 2 -->
-                <a href="product.html?variant=clear" class="group block reveal delay-1">
-                    <div class="bg-white rounded-xl aspect-[3/4] mb-6 flex items-center justify-center p-8 overflow-hidden relative border border-brand-beige group-hover:border-brand-accent2 transition-colors">
-                        <img src="assets/clear.png" alt="CLEAR - Eucalyptus + Rosemary" class="object-contain h-full transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur rounded-full p-3 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                            <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-black"></i>
-                        </div>
+                <details class="group bg-white rounded-lg border border-brand-beige p-6">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-lg">
+                        <span>What exactly is Potassium Alum?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 font-light mt-4 leading-relaxed">
+                        Potassium Alum is a naturally occurring mineral salt. Unlike synthetic aluminum compounds found in common antiperspirants—which physically plug your pores—Potassium Alum molecules are too large to be absorbed into your skin. It stays safely on the surface, keeping you fresh for up to 24 hours.
                     </div>
-                    <div class="text-center">
-                        <div class="inline-block px-3 py-1 bg-brand-accent2/20 text-brand-accent2 text-xs font-semibold tracking-wider rounded-full mb-3">CLEAR</div>
-                        <h2 class="text-xl font-serif mb-1 group-hover:text-brand-accent2 transition-colors">Eucalyptus + Rosemary</h2>
-                        <p class="text-gray-500 text-sm font-light mb-3">Natural Unisex Deodorant • 50ml</p>
-                        <p class="text-lg font-medium">₹200</p>
-                    </div>
-                </a>
+                </details>
 
-                <!-- Product 3 -->
-                <a href="product.html?variant=ground" class="group block reveal delay-2">
-                    <div class="bg-white rounded-xl aspect-[3/4] mb-6 flex items-center justify-center p-8 overflow-hidden relative border border-brand-beige group-hover:border-[#8b6b4e] transition-colors">
-                        <img src="assets/ground.png" alt="GROUND - Sandalwood + Cedarwood" class="object-contain h-full transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur rounded-full p-3 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                            <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-black"></i>
-                        </div>
+                <details class="group bg-white rounded-lg border border-brand-beige p-6">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-lg">
+                        <span>How long does one bottle last?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 font-light mt-4 leading-relaxed">
+                        A typical 50ml natural roll-on runs out in less than a month because it dispenses too quickly. We fixed this by using Xanthan Gum, a natural thickener. This gives our formula the perfect texture so it rolls on smoothly and stretches <strong>one bottle to last 6 to 8 weeks</strong> of daily use.
                     </div>
-                    <div class="text-center">
-                        <div class="inline-block px-3 py-1 bg-[#8b6b4e]/20 text-[#8b6b4e] text-xs font-semibold tracking-wider rounded-full mb-3">GROUND</div>
-                        <h2 class="text-xl font-serif mb-1 group-hover:text-[#8b6b4e] transition-colors">Sandalwood + Cedarwood</h2>
-                        <p class="text-gray-500 text-sm font-light mb-3">Natural Unisex Deodorant • 50ml</p>
-                        <p class="text-lg font-medium">₹200</p>
-                    </div>
-                </a>
+                </details>
 
+                <h3 class="text-xl font-serif mt-12 mb-4 border-b border-brand-beige pb-2">Safety & Shelf Life</h3>
+
+                <details class="group bg-white rounded-lg border border-brand-beige p-6">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-lg">
+                        <span>Is it safe for sensitive skin?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 font-light mt-4 leading-relaxed">
+                        Yes. We formulated this specifically with sensitive skin in mind. We eliminated baking soda (a common irritant in natural deodorants), synthetic "parfum" (which hides hundreds of chemicals), and harsh preservatives like parabens. Plus, we added plant-derived glycerin to keep your underarms moisturized.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-lg border border-brand-beige p-6">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-lg">
+                        <span>What is the shelf life?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 font-light mt-4 leading-relaxed">
+                        Our roll-ons have a stable shelf life of <strong>18 to 24 months</strong>. We achieve this naturally using a blend of Rosemary Leaf Extract and Vitamin E (Tocopherol)—completely eliminating the need for formaldehyde-releasing preservatives.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-lg border border-brand-beige p-6">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-lg">
+                        <span>Why does it say "Unisex by Default"?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 font-light mt-4 leading-relaxed">
+                        Because sweat doesn't have a gender. We don't believe in charging a "pink tax" for women or making overly aggressive branding for men. Our packaging is neutral, and our natural essential oil scents (like Eucalyptus & Rosemary or Sandalwood) smell incredible on absolutely everyone.
+                    </div>
+                </details>
+
+            </div>
+
+            <div class="mt-16 text-center reveal">
+                <p class="text-gray-500 mb-4">Still have a question?</p>
+                <a href="contact.html" class="bg-brand-black text-white px-6 py-3 rounded-md hover:bg-brand-green transition-colors inline-block">Contact Us</a>
             </div>
 
         </div>
@@ -194,7 +221,19 @@
 
     <script>
         lucide.createIcons();
-        
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal:not(.active)");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100);
+
         // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -213,18 +252,6 @@
                 lucide.createIcons();
             });
         }
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal:not(.active)");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 50) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        setTimeout(reveal, 100);
     </script>
 </body>
 </html>
