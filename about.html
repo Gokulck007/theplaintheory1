@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | The Plain Theory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#1c1c1c',
+                            green: '#2d5a27',
+                            light: '#f7f6f2',
+                            beige: '#e8e5d9',
+                            gray: '#8a8a8a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f7f6f2; color: #1c1c1c; -webkit-font-smoothing: antialiased; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#f7f6f2]/90 backdrop-blur-md border-b border-brand-beige">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="flex items-center gap-2 font-serif text-2xl tracking-tight text-brand-black">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-brand-black"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                    <span>the plain theory</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="shop.html" class="hover:text-brand-green transition-colors">Shop</a>
+                    <a href="about.html" class="text-brand-green">Our Story</a>
+                    <a href="ingredients.html" class="hover:text-brand-green transition-colors">Ingredients</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="hover:text-brand-green transition-colors"><i data-lucide="search" class="w-5 h-5"></i></button>
+                <button class="hover:text-brand-green transition-colors"><i data-lucide="user" class="w-5 h-5"></i></button>
+                <button class="hover:text-brand-green transition-colors relative">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="absolute -top-1 -right-1 bg-brand-green text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="px-6 mb-24 max-w-4xl mx-auto text-center reveal active">
+            <h1 class="text-4xl md:text-6xl font-serif mb-6 leading-tight">We believe the deodorant aisle is fundamentally broken.</h1>
+            <p class="text-xl text-gray-500 font-light leading-relaxed max-w-2xl mx-auto">So we built a brand based on a very plain theory: skin science should be simple, honest, and for every body.</p>
+        </section>
+
+        <!-- The Problem Grid -->
+        <section class="bg-white py-24 px-6 border-y border-brand-beige">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-serif mb-16 text-center reveal">The Problems We Set Out to Solve</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="reveal">
+                        <div class="text-brand-green font-serif text-4xl mb-4">01</div>
+                        <h3 class="text-xl font-medium mb-3">Harsh, Questionable Actives</h3>
+                        <p class="text-gray-500 font-light leading-relaxed">
+                            For decades, the industry relied on aluminum chlorohydrate, parabens, and synthetic fragrances. These drive growing consumer distrust and can irritate sensitive underarm skin. We knew there was a better way.
+                        </p>
+                    </div>
+                    <div class="reveal delay-1">
+                        <div class="text-brand-green font-serif text-4xl mb-4">02</div>
+                        <h3 class="text-xl font-medium mb-3">Gendered by Default</h3>
+                        <p class="text-gray-500 font-light leading-relaxed">
+                            'His' and 'Her' packaging splits one product into two SKUs, wrapped in pink or dark blue plastic, often charging women a "pink tax". Sweat is human. Deodorant should be too.
+                        </p>
+                    </div>
+                    <div class="reveal delay-2">
+                        <div class="text-brand-green font-serif text-4xl mb-4">03</div>
+                        <h3 class="text-xl font-medium mb-3">Short-lived & Over-priced</h3>
+                        <p class="text-gray-500 font-light leading-relaxed">
+                            Aerosol sprays evaporate fast and choke the room. Most 'natural' roll-ons are so thin they don't survive a month of daily use. We formulated our roll-on to dispense perfectly, stretching 50ml to 6-8 weeks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image & Philosophy -->
+        <section class="py-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2 reveal">
+                <!-- Placeholder for lifestyle image -->
+                <div class="aspect-[4/5] bg-gray-200 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=1000&auto=format&fit=crop" alt="Minimalist Lifestyle" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 reveal delay-1">
+                <h2 class="text-4xl font-serif mb-6">Works with the body, not against it.</h2>
+                <div class="space-y-6 text-gray-500 font-light leading-relaxed text-lg">
+                    <p>
+                        Sweating is a natural, necessary function. It regulates your temperature and expels toxins. The problem isn't sweat—it's the bacteria that breaks sweat down.
+                    </p>
+                    <p>
+                        Traditional antiperspirants plug your sweat glands with aluminum salts. We take a different approach. Our active ingredient, Potassium Alum, is a naturally occurring mineral that sits on the surface of the skin, creating a mildly acidic environment where odor-causing bacteria simply cannot survive.
+                    </p>
+                    <p>
+                        No blocked pores. No stained shirts. Just clean, 24-hour freshness that lets your body do what it was designed to do.
+                    </p>
+                </div>
+                <a href="shop.html" class="inline-block mt-10 pb-1 border-b border-brand-black font-medium hover:text-brand-green hover:border-brand-green transition-colors">Shop the Collection &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-16 px-6 border-t border-brand-beige">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="index.html" class="flex items-center gap-2 font-serif text-xl tracking-tight text-brand-black mb-6">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-brand-black"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                    <span>the plain theory</span>
+                </a>
+                <p class="text-gray-500 text-sm font-light leading-relaxed">Where skin science meets simplicity. Honest formulations that respect your body.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-medium mb-6">Explore</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-500">
+                    <li><a href="shop.html" class="hover:text-brand-green transition-colors">Shop All</a></li>
+                    <li><a href="about.html" class="hover:text-brand-green transition-colors">Our Story</a></li>
+                    <li><a href="ingredients.html" class="hover:text-brand-green transition-colors">Ingredients</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-medium mb-6">Support</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-500">
+                    <li><a href="#" class="hover:text-brand-green transition-colors">FAQ</a></li>
+                    <li><a href="#" class="hover:text-brand-green transition-colors">Shipping & Returns</a></li>
+                    <li><a href="#" class="hover:text-brand-green transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-medium mb-6">Stay in the Loop</h4>
+                <p class="text-gray-500 text-sm font-light mb-4">Subscribe for early access to new batches.</p>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="Email address" class="flex-grow px-4 py-2 text-sm rounded border border-gray-300 focus:outline-none focus:border-brand-green">
+                    <button type="submit" class="bg-brand-black text-white px-4 py-2 text-sm rounded hover:bg-brand-green transition-colors">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-brand-beige flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 font-light">
+            <p>&copy; 2026 The Plain Theory. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-green transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-green transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal:not(.active)");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100);
+    </script>
+</body>
+</html>

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Plain Theory | ALUMA Coming Soon</title>
+    <title>The Plain Theory | Where Skin Science Meets Simplicity</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -18,7 +19,10 @@
                             green: '#2d5a27',
                             light: '#f7f6f2',
                             beige: '#e8e5d9',
-                            gray: '#8a8a8a'
+                            gray: '#8a8a8a',
+                            accent1: '#8ba689',
+                            accent2: '#6b8e84',
+                            accent3: '#9c7c5e'
                         }
                     },
                     fontFamily: {
@@ -30,227 +34,205 @@
         }
     </script>
     <style>
-        body {
-            background-color: #f7f6f2;
-            color: #1c1c1c;
-            -webkit-font-smoothing: antialiased;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        body { background-color: #f7f6f2; color: #1c1c1c; -webkit-font-smoothing: antialiased; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        /* Custom image mask for aesthetics */
-        .image-mask {
-            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-        }
     </style>
 </head>
-<body class="font-sans overflow-x-hidden">
+<body class="flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-brand-light/90 backdrop-blur-md border-b border-brand-beige/50">
+    <nav class="fixed w-full z-50 bg-[#f7f6f2]/90 backdrop-blur-md border-b border-brand-beige">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="assets/logo-light.png" alt="The Plain Theory" class="h-10 object-contain">
-            </div>
-            <div>
-                <a href="#notify" class="text-sm font-medium hover:text-brand-green transition-colors px-5 py-2.5 rounded-full border border-brand-black/10 hover:border-brand-green">
-                    Join the Waitlist
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="flex items-center gap-2 font-serif text-2xl tracking-tight text-brand-black">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-brand-black"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                    <span>the plain theory</span>
                 </a>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="shop.html" class="hover:text-brand-green transition-colors">Shop</a>
+                    <a href="about.html" class="hover:text-brand-green transition-colors">Our Story</a>
+                    <a href="ingredients.html" class="hover:text-brand-green transition-colors">Ingredients</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="hover:text-brand-green transition-colors"><i data-lucide="search" class="w-5 h-5"></i></button>
+                <button class="hover:text-brand-green transition-colors"><i data-lucide="user" class="w-5 h-5"></i></button>
+                <button class="hover:text-brand-green transition-colors relative">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="absolute -top-1 -right-1 bg-brand-green text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 md:pt-40 md:pb-32 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
-            <div class="w-full md:w-1/2 reveal active">
-                <div class="inline-block px-3 py-1 bg-brand-green/10 text-brand-green text-xs font-semibold tracking-widest uppercase mb-6 rounded-sm">
-                    Coming Soon
-                </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif text-brand-black leading-[1.1] mb-6">
-                    Where skin science <br>
-                    <span class="italic text-brand-green">meets simplicity.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-lg font-light leading-relaxed">
-                    We're redefining personal care, starting with the deodorant aisle. Meet <strong class="font-medium">ALUMA</strong> — a clean, unisex roll-on powered by natural potassium alum.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 max-w-md">
-                    <a href="#notify" class="bg-brand-black hover:bg-brand-green text-white text-center px-8 py-4 rounded-md font-medium transition-colors duration-300">
-                        Notify me at launch
-                    </a>
+    <section class="pt-32 pb-24 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="reveal active z-10">
+                <div class="inline-block px-3 py-1 bg-brand-beige text-brand-black text-xs font-semibold tracking-wider rounded-full mb-6">NOW AVAILABLE</div>
+                <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight">Where skin science meets simplicity.</h1>
+                <p class="text-xl text-gray-500 font-light mb-10 max-w-lg leading-relaxed">A clean, unisex alum roll-on deodorant built for one-month reliability. Works with your body, not against it.</p>
+                <div class="flex gap-4">
+                    <a href="shop.html" class="bg-brand-black text-white px-8 py-4 rounded-md font-medium hover:bg-brand-green transition-colors">Shop Now</a>
+                    <a href="about.html" class="px-8 py-4 rounded-md font-medium border border-gray-300 hover:border-brand-black transition-colors">Read the Theory</a>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 reveal active delay-2">
-                <div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl bg-brand-light flex items-center justify-center border border-brand-beige">
-                    <!-- Custom ALUMA Bottle SVG Mockup -->
-                    <svg viewBox="0 0 200 400" class="w-1/2 h-auto max-h-[80%] drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Bottle Body (Clear/Glass) -->
-                        <rect x="50" y="80" width="100" height="250" rx="30" fill="#ffffff" stroke="#e8e5d9" stroke-width="2"/>
-                        
-                        <!-- Liquid Level (Light Hazy) -->
-                        <path d="M51 280 L149 280 L149 300 C149 315.464 136.464 328 121 328 L79 328 C63.536 328 51 315.464 51 300 Z" fill="#f7f6f2"/>
-
-                        <!-- Roller Ball Housing / Neck -->
-                        <path d="M70 80 L70 70 C70 64.477 74.477 60 80 60 L120 60 C125.523 60 130 64.477 130 70 L130 80 Z" fill="#ffffff" stroke="#e8e5d9" stroke-width="2"/>
-                        
-                        <!-- Roller Ball (Stainless Steel) -->
-                        <circle cx="100" cy="55" r="20" fill="#d1d5db"/>
-                        
-                        <!-- Cap (Dark Green) - Hovering slightly above -->
-                        <path d="M65 40 L65 15 C65 6.716 71.716 0 80 0 L120 0 C128.284 0 135 6.716 135 15 L135 40 Z" fill="#2d5a27"/>
-
-                        <!-- Label (Dark Green) -->
-                        <rect x="50" y="140" width="100" height="110" fill="#2d5a27"/>
-
-                        <!-- Label Content -->
-                        <text x="100" y="170" font-family="'Playfair Display', serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="600" letter-spacing="1">ALUMA</text>
-                        
-                        <text x="100" y="190" font-family="'Inter', sans-serif" font-size="5" fill="#e8e5d9" text-anchor="middle" font-weight="300">Natural Unisex</text>
-                        <text x="100" y="197" font-family="'Inter', sans-serif" font-size="5" fill="#e8e5d9" text-anchor="middle" font-weight="300">Deodorant</text>
-                        
-                        <text x="100" y="225" font-family="'Inter', sans-serif" font-size="4" fill="#e8e5d9" text-anchor="middle" font-style="italic">Alum • Tea Tree • Lavender</text>
-                        
-                        <text x="100" y="240" font-family="'Inter', sans-serif" font-size="4" fill="#e8e5d9" text-anchor="middle">50ml e</text>
-                    </svg>
-                </div>
+            <div class="relative reveal delay-1 flex justify-center md:justify-end">
+                <div class="absolute inset-0 bg-brand-green/5 rounded-full blur-3xl transform scale-150 -z-10"></div>
+                <img src="assets/even.png" alt="ALUMA Deodorant" class="max-w-sm w-full drop-shadow-2xl object-contain h-[500px]">
             </div>
         </div>
     </section>
 
-    <!-- The Problem / Solution -->
-    <section class="py-24 bg-white px-6">
+    <!-- Featured Scents -->
+    <section class="py-24 bg-white px-6 border-y border-brand-beige">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-3xl md:text-5xl font-serif mb-4">The deodorant aisle is broken.</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto text-lg">We didn't like what we saw, so we built something better.</p>
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-serif mb-4">Three honest scents.</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light">Naturally fragranced with pure essential oils. No synthetic 'parfums'.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-                <!-- Feature 1 -->
-                <div class="flex flex-col items-center text-center reveal delay-1">
-                    <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center mb-6 border border-brand-beige">
-                        <span class="text-brand-green font-serif text-2xl italic">01</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- EVEN -->
+                <a href="product.html?variant=even" class="group block text-center reveal">
+                    <div class="bg-brand-light rounded-xl aspect-[4/5] mb-6 flex items-center justify-center p-8 border border-transparent group-hover:border-brand-accent1 transition-colors">
+                        <img src="assets/even.png" alt="EVEN" class="h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-medium mb-3">No Harsh Actives</h3>
-                    <p class="text-gray-500 font-light leading-relaxed">
-                        Say goodbye to aluminum chlorohydrate, parabens, and synthetic fragrances that drive consumer distrust. ALUMA uses 100% natural potassium alum.
-                    </p>
-                </div>
-                <!-- Feature 2 -->
-                <div class="flex flex-col items-center text-center reveal delay-2">
-                    <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center mb-6 border border-brand-beige">
-                        <span class="text-brand-green font-serif text-2xl italic">02</span>
+                    <div class="inline-block px-3 py-1 bg-brand-accent1/20 text-brand-accent1 text-xs font-semibold tracking-wider rounded-full mb-3">EVEN</div>
+                    <h3 class="text-xl font-serif mb-1 group-hover:text-brand-accent1 transition-colors">Tea Tree + Lavender</h3>
+                    <p class="text-gray-500 text-sm font-light">Our signature botanical blend.</p>
+                </a>
+                
+                <!-- CLEAR -->
+                <a href="product.html?variant=clear" class="group block text-center reveal delay-1">
+                    <div class="bg-brand-light rounded-xl aspect-[4/5] mb-6 flex items-center justify-center p-8 border border-transparent group-hover:border-brand-accent2 transition-colors">
+                        <img src="assets/clear.png" alt="CLEAR" class="h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-medium mb-3">Unisex by Default</h3>
-                    <p class="text-gray-500 font-light leading-relaxed">
-                        No more 'His' and 'Her' pink-tax packaging. A clear liquid with a neutral, refreshing tea tree and lavender scent designed for every body.
-                    </p>
-                </div>
-                <!-- Feature 3 -->
-                <div class="flex flex-col items-center text-center reveal delay-3">
-                    <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center mb-6 border border-brand-beige">
-                        <span class="text-brand-green font-serif text-2xl italic">03</span>
+                    <div class="inline-block px-3 py-1 bg-brand-accent2/20 text-brand-accent2 text-xs font-semibold tracking-wider rounded-full mb-3">CLEAR</div>
+                    <h3 class="text-xl font-serif mb-1 group-hover:text-brand-accent2 transition-colors">Eucalyptus + Rosemary</h3>
+                    <p class="text-gray-500 text-sm font-light">Crisp, awakening, and fresh.</p>
+                </a>
+
+                <!-- GROUND -->
+                <a href="product.html?variant=ground" class="group block text-center reveal delay-2">
+                    <div class="bg-brand-light rounded-xl aspect-[4/5] mb-6 flex items-center justify-center p-8 border border-transparent group-hover:border-[#9c7c5e] transition-colors">
+                        <img src="assets/ground.png" alt="GROUND" class="h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-medium mb-3">Built to Last</h3>
-                    <p class="text-gray-500 font-light leading-relaxed">
-                        Sprays evaporate fast. Our thickened xanthan gum formula stretches a single 50ml bottle to last 6-8 weeks of daily use.
-                    </p>
-                </div>
+                    <div class="inline-block px-3 py-1 bg-[#9c7c5e]/20 text-[#9c7c5e] text-xs font-semibold tracking-wider rounded-full mb-3">GROUND</div>
+                    <h3 class="text-xl font-serif mb-1 group-hover:text-[#9c7c5e] transition-colors">Sandalwood + Cedarwood</h3>
+                    <p class="text-gray-500 text-sm font-light">Deep, earthy, and grounding.</p>
+                </a>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="shop.html" class="inline-flex items-center gap-2 font-medium pb-1 border-b border-brand-black hover:text-brand-green hover:border-brand-green transition-all">Shop All Variants <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Deep Dive: Ingredients -->
+    <!-- Value Props -->
     <section class="py-24 bg-brand-black text-white px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
             <div class="w-full md:w-1/2 reveal">
-                <img src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=1000&auto=format&fit=crop" alt="Botanical Ingredients" class="w-full aspect-square object-cover rounded-full p-4 border border-white/20">
-            </div>
-            <div class="w-full md:w-1/2 reveal delay-1">
-                <h2 class="text-4xl md:text-5xl font-serif mb-8">Radical transparency in every drop.</h2>
-                <ul class="space-y-6">
-                    <li class="border-b border-white/20 pb-4">
-                        <strong class="block text-lg font-medium text-brand-beige mb-1">Potassium Alum (15-18%)</strong>
-                        <span class="text-gray-400 font-light">Natural mineral antimicrobial action without clogging pores.</span>
+                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">The deodorant aisle is broken. We fixed it.</h2>
+                <ul class="space-y-8">
+                    <li class="flex gap-4">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-brand-green shrink-0"></i>
+                        <div>
+                            <strong class="block text-lg font-medium text-white mb-1">No Harsh Actives</strong>
+                            <span class="text-gray-400 font-light">No aluminum chlorohydrate, parabens, or synthetic fragrances. We use naturally occurring Potassium Alum.</span>
+                        </div>
                     </li>
-                    <li class="border-b border-white/20 pb-4">
-                        <strong class="block text-lg font-medium text-brand-beige mb-1">Tea Tree & Lavender</strong>
-                        <span class="text-gray-400 font-light">Pure essential oils for fragrance and natural preservation. No synthetic 'parfum'.</span>
+                    <li class="flex gap-4">
+                        <i data-lucide="users" class="w-8 h-8 text-brand-green shrink-0"></i>
+                        <div>
+                            <strong class="block text-lg font-medium text-white mb-1">Unisex by Default</strong>
+                            <span class="text-gray-400 font-light">No 'His' and 'Her' pink-tax packaging. Formulated and designed for every body.</span>
+                        </div>
                     </li>
-                    <li class="border-b border-white/20 pb-4">
-                        <strong class="block text-lg font-medium text-brand-beige mb-1">Plant-Derived Glycerin</strong>
-                        <span class="text-gray-400 font-light">Locks in moisture to ensure your underarms stay comfortable and hydrated.</span>
+                    <li class="flex gap-4">
+                        <i data-lucide="clock" class="w-8 h-8 text-brand-green shrink-0"></i>
+                        <div>
+                            <strong class="block text-lg font-medium text-white mb-1">Built to Last</strong>
+                            <span class="text-gray-400 font-light">Our naturally thickened xanthan gum formula stretches a single 50ml bottle to 6-8 weeks of daily use.</span>
+                        </div>
                     </li>
                 </ul>
+                <div class="mt-10">
+                    <a href="ingredients.html" class="inline-flex items-center gap-2 text-brand-beige hover:text-white transition-colors border-b border-white/30 hover:border-white pb-1">Read our ingredient transparency <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Waitlist / CTA -->
-    <section id="notify" class="py-32 px-6 bg-brand-light relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#2d5a27 1px, transparent 1px); background-size: 30px 30px;"></div>
-        
-        <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
-            <img src="assets/logo-stacked.png" alt="The Plain Theory" class="h-24 mx-auto mb-10 object-contain">
-            <h2 class="text-4xl md:text-5xl font-serif mb-6">Be the first to experience ALUMA.</h2>
-            <p class="text-gray-600 mb-10 text-lg font-light">Join the exclusive waitlist. We'll notify you the moment our first batch drops.</p>
-            
-            <form onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden'); this.style.display='none';" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-                <input type="email" placeholder="Email address" required
-                    class="flex-grow px-5 py-4 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-brand-green focus:border-brand-green bg-white shadow-sm text-lg">
-                <button type="submit" 
-                    class="bg-brand-green hover:bg-[#1a3816] text-white px-8 py-4 rounded-md font-medium transition-colors text-lg whitespace-nowrap">
-                    Join Waitlist
-                </button>
-            </form>
-            <div id="success-msg" class="hidden text-brand-green text-xl font-serif italic mt-6">
-                Thank you. You're on the list.
+            <div class="w-full md:w-1/2 reveal delay-1">
+                <div class="aspect-square bg-gray-800 rounded-full overflow-hidden border border-white/10 p-4">
+                    <img src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=1000&auto=format&fit=crop" alt="Botanical Ingredients" class="w-full h-full object-cover rounded-full">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white py-12 px-6 border-t border-brand-beige">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <img src="assets/logo-light.png" alt="The Plain Theory" class="h-6 opacity-60 grayscale">
+    <footer class="bg-white py-16 px-6 border-t border-brand-beige">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="index.html" class="flex items-center gap-2 font-serif text-xl tracking-tight text-brand-black mb-6">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-brand-black"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                    <span>the plain theory</span>
+                </a>
+                <p class="text-gray-500 text-sm font-light leading-relaxed">Where skin science meets simplicity. Honest formulations that respect your body.</p>
             </div>
-            <div class="text-sm text-gray-500 font-light">
-                &copy; 2026 The Plain Theory. All rights reserved.
+            
+            <div>
+                <h4 class="font-medium mb-6">Explore</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-500">
+                    <li><a href="shop.html" class="hover:text-brand-green transition-colors">Shop All</a></li>
+                    <li><a href="about.html" class="hover:text-brand-green transition-colors">Our Story</a></li>
+                    <li><a href="ingredients.html" class="hover:text-brand-green transition-colors">Ingredients</a></li>
+                </ul>
             </div>
-            <div class="flex gap-6 text-sm font-medium">
-                <a href="#" class="text-gray-500 hover:text-brand-green transition-colors">Instagram</a>
 
-                <a href="#" class="text-gray-500 hover:text-brand-green transition-colors">Contact</a>
+            <div>
+                <h4 class="font-medium mb-6">Support</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-500">
+                    <li><a href="#" class="hover:text-brand-green transition-colors">FAQ</a></li>
+                    <li><a href="#" class="hover:text-brand-green transition-colors">Shipping & Returns</a></li>
+                    <li><a href="#" class="hover:text-brand-green transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-medium mb-6">Stay in the Loop</h4>
+                <p class="text-gray-500 text-sm font-light mb-4">Subscribe for early access to new batches.</p>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="Email address" class="flex-grow px-4 py-2 text-sm rounded border border-gray-300 focus:outline-none focus:border-brand-green">
+                    <button type="submit" class="bg-brand-black text-white px-4 py-2 text-sm rounded hover:bg-brand-green transition-colors">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-brand-beige flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 font-light">
+            <p>&copy; 2026 The Plain Theory. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-green transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-green transition-colors">Terms of Service</a>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll Reveal Script -->
     <script>
+        lucide.createIcons();
         function reveal() {
             var reveals = document.querySelectorAll(".reveal:not(.active)");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
+                if (elementTop < windowHeight - 50) {
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
-        // Trigger once on load
         setTimeout(reveal, 100);
     </script>
 </body>

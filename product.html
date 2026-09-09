@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | The Plain Theory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#1c1c1c',
+                            green: '#2d5a27',
+                            light: '#f7f6f2',
+                            beige: '#e8e5d9',
+                            gray: '#8a8a8a',
+                            accent1: '#8ba689', // Even
+                            accent2: '#6b8e84', // Clear
+                            accent3: '#9c7c5e'  // Ground
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f7f6f2; color: #1c1c1c; -webkit-font-smoothing: antialiased; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#f7f6f2]/90 backdrop-blur-md border-b border-brand-beige">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="flex items-center gap-2 font-serif text-2xl tracking-tight text-brand-black">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-brand-black"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                    <span>the plain theory</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="shop.html" class="hover:text-brand-green transition-colors">Shop</a>
+                    <a href="about.html" class="hover:text-brand-green transition-colors">Our Story</a>
+                    <a href="ingredients.html" class="hover:text-brand-green transition-colors">Ingredients</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="hover:text-brand-green transition-colors"><i data-lucide="search" class="w-5 h-5"></i></button>
+                <button class="hover:text-brand-green transition-colors"><i data-lucide="user" class="w-5 h-5"></i></button>
+                <button class="hover:text-brand-green transition-colors relative">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="absolute -top-1 -right-1 bg-brand-green text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                
+                <!-- Product Image -->
+                <div class="bg-white rounded-2xl aspect-[4/5] md:sticky md:top-32 flex items-center justify-center p-12 border border-brand-beige">
+                    <img id="product-img" src="assets/even.png" alt="Product Image" class="object-contain h-full w-full">
+                </div>
+
+                <!-- Product Details -->
+                <div class="pt-4">
+                    <!-- Breadcrumbs -->
+                    <div class="text-xs font-light text-gray-400 mb-6 flex items-center gap-2">
+                        <a href="shop.html" class="hover:text-brand-black">Shop</a>
+                        <span>/</span>
+                        <span id="breadcrumb-name">EVEN</span>
+                    </div>
+
+                    <div id="badge-container" class="inline-block px-3 py-1 bg-brand-accent1/20 text-brand-accent1 text-xs font-semibold tracking-wider rounded-full mb-4">EVEN</div>
+                    
+                    <h1 id="product-title" class="text-4xl font-serif mb-2">Tea Tree + Lavender</h1>
+                    <p class="text-gray-500 font-light text-lg mb-6">Natural Unisex Deodorant • 50ml Roll-On</p>
+                    
+                    <p class="text-2xl font-medium mb-8">₹200 <span class="text-sm font-light text-gray-400 ml-2">(incl. of all taxes)</span></p>
+
+                    <p id="product-desc" class="text-gray-600 font-light leading-relaxed mb-8">
+                        Our signature blend. Naturally antimicrobial potassium alum meets pure tea tree and lavender essential oils. Thickened perfectly to last 6-8 weeks of daily use. No synthetic fragrance, no aluminum chlorohydrate.
+                    </p>
+
+                    <!-- Variants -->
+                    <div class="mb-10">
+                        <p class="text-sm font-medium mb-3">Scent Profile</p>
+                        <div class="flex gap-4">
+                            <a href="product.html?variant=even" class="flex flex-col items-center gap-2 group">
+                                <div class="w-12 h-12 rounded-full bg-brand-accent1/20 border-2 border-transparent hover:border-brand-accent1 flex items-center justify-center transition-all" id="var-even">
+                                    <div class="w-8 h-8 rounded-full bg-brand-accent1"></div>
+                                </div>
+                                <span class="text-xs font-light text-gray-500 group-hover:text-brand-black">EVEN</span>
+                            </a>
+                            <a href="product.html?variant=clear" class="flex flex-col items-center gap-2 group">
+                                <div class="w-12 h-12 rounded-full bg-brand-accent2/20 border-2 border-transparent hover:border-brand-accent2 flex items-center justify-center transition-all" id="var-clear">
+                                    <div class="w-8 h-8 rounded-full bg-brand-accent2"></div>
+                                </div>
+                                <span class="text-xs font-light text-gray-500 group-hover:text-brand-black">CLEAR</span>
+                            </a>
+                            <a href="product.html?variant=ground" class="flex flex-col items-center gap-2 group">
+                                <div class="w-12 h-12 rounded-full bg-[#9c7c5e]/20 border-2 border-transparent hover:border-[#9c7c5e] flex items-center justify-center transition-all" id="var-ground">
+                                    <div class="w-8 h-8 rounded-full bg-[#9c7c5e]"></div>
+                                </div>
+                                <span class="text-xs font-light text-gray-500 group-hover:text-brand-black">GROUND</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Add to Cart -->
+                    <div class="flex gap-4 mb-12">
+                        <div class="flex items-center border border-gray-300 rounded-md bg-white">
+                            <button class="px-4 py-3 text-gray-500 hover:text-brand-black transition-colors" onclick="document.getElementById('qty').value = Math.max(1, parseInt(document.getElementById('qty').value)-1)">-</button>
+                            <input type="number" id="qty" value="1" min="1" class="w-12 text-center font-medium focus:outline-none bg-transparent">
+                            <button class="px-4 py-3 text-gray-500 hover:text-brand-black transition-colors" onclick="document.getElementById('qty').value = parseInt(document.getElementById('qty').value)+1">+</button>
+                        </div>
+                        <button class="flex-grow bg-brand-black text-white rounded-md font-medium text-lg hover:bg-brand-green transition-colors" onclick="alert('Added to cart!')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Accordion Details -->
+                    <div class="border-t border-gray-200">
+                        <details class="group py-4 border-b border-gray-200" open>
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                <span>Why it Works</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                                </span>
+                            </summary>
+                            <div class="text-sm text-gray-500 font-light mt-4 leading-relaxed pb-2 pr-4">
+                                Most natural deodorants fail because they try to absorb sweat (which is impossible) or mask odor. We use Potassium Alum, a naturally occurring mineral salt that leaves an invisible, mildly acidic film on the skin. This prevents odor-causing bacteria from multiplying in the first place. You still sweat, but you don't smell.
+                            </div>
+                        </details>
+                        <details class="group py-4 border-b border-gray-200">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                <span>Full Ingredients</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                                </span>
+                            </summary>
+                            <div class="text-sm text-gray-500 font-light mt-4 leading-relaxed pb-2 pr-4">
+                                Aqua (Water), Potassium Alum (17%), Glycerin (3%), Polyglyceryl-4 Caprate, Xanthan Gum, Rosemary Leaf Extract, Tocopherol, Essential Oils. 
+                                <br><br>
+                                <span class="font-medium text-brand-black">Free from:</span> Aluminum chlorohydrate, parabens, phthalates, synthetic fragrances ('parfum'), baking soda, and synthetic dyes.
+                            </div>
+                        </details>
+                        <details class="group py-4 border-b border-gray-200">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                <span>How to Use</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                                </span>
+                            </summary>
+                            <div class="text-sm text-gray-500 font-light mt-4 leading-relaxed pb-2 pr-4">
+                                Shake gently before use. Roll 2-3 swipes onto clean, dry underarms. Allow a moment to dry before dressing. Built thick to dispense slowly—one 50ml bottle lasts 6-8 weeks of daily use.
+                            </div>
+                        </details>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-16 px-6 border-t border-brand-beige">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="index.html" class="flex items-center gap-2 font-serif text-xl tracking-tight text-brand-black mb-6">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-brand-black"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                    <span>the plain theory</span>
+                </a>
+                <p class="text-gray-500 text-sm font-light leading-relaxed">Where skin science meets simplicity. Honest formulations that respect your body.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-medium mb-6">Explore</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-500">
+                    <li><a href="shop.html" class="hover:text-brand-green transition-colors">Shop All</a></li>
+                    <li><a href="about.html" class="hover:text-brand-green transition-colors">Our Story</a></li>
+                    <li><a href="ingredients.html" class="hover:text-brand-green transition-colors">Ingredients</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-medium mb-6">Support</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-500">
+                    <li><a href="#" class="hover:text-brand-green transition-colors">FAQ</a></li>
+                    <li><a href="#" class="hover:text-brand-green transition-colors">Shipping & Returns</a></li>
+                    <li><a href="#" class="hover:text-brand-green transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-medium mb-6">Stay in the Loop</h4>
+                <p class="text-gray-500 text-sm font-light mb-4">Subscribe for early access to new batches.</p>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="Email address" class="flex-grow px-4 py-2 text-sm rounded border border-gray-300 focus:outline-none focus:border-brand-green">
+                    <button type="submit" class="bg-brand-black text-white px-4 py-2 text-sm rounded hover:bg-brand-green transition-colors">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-brand-beige flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 font-light">
+            <p>&copy; 2026 The Plain Theory. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-green transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-green transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Variant Logic
+        const variants = {
+            'even': {
+                name: 'EVEN',
+                title: 'Tea Tree + Lavender',
+                desc: 'Our signature blend. Naturally antimicrobial potassium alum meets pure tea tree and lavender essential oils. A fresh, herbaceous scent that works with your body.',
+                img: 'assets/even.png',
+                color: 'brand-accent1'
+            },
+            'clear': {
+                name: 'CLEAR',
+                title: 'Eucalyptus + Rosemary',
+                desc: 'A crisp, awakening profile. Naturally antimicrobial potassium alum meets the cooling freshness of eucalyptus and the woody warmth of rosemary.',
+                img: 'assets/clear.png',
+                color: 'brand-accent2'
+            },
+            'ground': {
+                name: 'GROUND',
+                title: 'Sandalwood + Cedarwood',
+                desc: 'Deep and earthy. Naturally antimicrobial potassium alum meets the rich, calming notes of sandalwood and grounding cedarwood for all-day comfort.',
+                img: 'assets/ground.png',
+                color: '[#9c7c5e]'
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentVariant = urlParams.get('variant');
+        if (!currentVariant || !variants[currentVariant]) {
+            currentVariant = 'even';
+        }
+
+        const data = variants[currentVariant];
+        
+        // Update DOM
+        document.getElementById('product-img').src = data.img;
+        document.getElementById('breadcrumb-name').innerText = data.name;
+        document.getElementById('product-title').innerText = data.title;
+        document.getElementById('product-desc').innerText = data.desc;
+        
+        const badge = document.getElementById('badge-container');
+        badge.innerText = data.name;
+        badge.className = `inline-block px-3 py-1 bg-${data.color}/20 text-${data.color} text-xs font-semibold tracking-wider rounded-full mb-4`;
+        
+        if(currentVariant === 'ground') {
+            badge.className = `inline-block px-3 py-1 bg-[#9c7c5e]/20 text-[#9c7c5e] text-xs font-semibold tracking-wider rounded-full mb-4`;
+        }
+
+        // Highlight selected variant circle
+        document.getElementById(`var-${currentVariant}`).classList.add('border-brand-black');
+
+    </script>
+</body>
+</html>
